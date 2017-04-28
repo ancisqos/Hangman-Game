@@ -6,7 +6,14 @@
 </head>
   <body>
 
+    <h1>Heavy Metal Hangman!</h1>
+    
+    <p id="AnyKey">Press any key to begin!</p>
+    <p id="Wins">Wins: </p>
+
+
     <script>
+      //What we need:
 
       //PRESS ANY KEY TO GET STARTED! 
       //Write function to initialize game
@@ -16,6 +23,13 @@
 
       //CURRENT WORD  
       //function to generate random word, the blank _ _ _ _ _ _ _ for the words, the spaces getting filled as letters are guessed
+
+      var word = "black sabbath";
+      var wordLength = word.length;
+      var underscores = "";
+      for(i=0; i<wordLength; i++) {
+    underscores = underscores + "_ "
+    }
 
       //NUMBER OF GUESSES REMAINING 
       //function to countdown the number of guesses and display it
@@ -29,18 +43,46 @@
       //LOOP
       //when game is won, show win screen/answer/picture and loop function to initialize game
 
-	  //VARIABLES//
+	  //VARIABLES and ARRAYS//
 	  //=========================================================
 
 	  //Here is where we will define our variables for the Hangman game
+
+    //Creates array that lists out every possible key choice
+    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+    //variable for Wins
+    var wins = 0;
+
+    //Array of band names.
+    var bandsArray = ["black sabbath", "iron maiden", "metallica", "slayer", "pantera"];
+
+    //Randomly chooses a band from the bands array.
+    var randomBand = bandsArray[Math.floor(Math.random() * bandsArray.length)];
+
 
 	  //FUNCTIONS//
 	  //=========================================================
 
 	  //Here is where we will set our functions for the Hangman game
 
+    //Function to initialize game
+
+
+    //Function that updates score (keeps track of wins)
+    function updateScore() {
+        document.querySelector("#score").innerHTML = "Score: " + score;
+      }
 	  //MAIN PROCESS
 	  //=========================================================
+
+    //When user presses key, it will run the following function:
+
+    document.onkeyup = function(event) {
+      console.log(onkeyup);
+
+
+    }
   	
     </script>
 
