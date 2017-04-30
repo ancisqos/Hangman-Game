@@ -6,33 +6,52 @@
 </head>
   <body>
 
-    <h1>Heavy Metal Hangman!</h1>
+    <h1>Heavy Metal Hangman</h1>
     
     <div id="game">
       <p>Press any key to start playing!</p>
     </div>
 
-    <div id="wins">
-      <p>wins:</p>
+    <div>
+      <p>wins: <span id="wins"></span></p>
+    </div>
+
+    <div>
+      <p>word: <span id="word"></span></p>
     </div>
 
 
 
     <script>
     // What we need:
+    
+// This is grabbing from HTML and throwing it into JavaScript
+    var wins = document.getElementById("wins");
+// This is to make sure you're grabbing the right thing
+    console.log(wins);
+// 
+    var winsCounter = 0;
 
+    wins.innerHTML = winsCounter;
       
 
       //CURRENT WORD  
       //function to generate random word, the blank _ _ _ _ _ _ _ for the words, the spaces getting filled as letters are guessed
 
-      var word = "black sabbath";
-      var wordLength = word.length;
-      var underscores = "";
-      for(i=0; i<wordLength; i++) {
-    underscores = underscores + "_ "
+    //   var word = "black sabbath";
+    //   var wordLength = word.length;
+    //   var underscores = "";
+    //   for(i=0; i<wordLength; i++) {
+    // underscores = underscores + "_ "
 
-    }
+        var word = document.getElementById("word")
+        console.log(word)
+        var wordLength = word.length;
+        var underscores = "";
+        for (i=0; i<wordLength; i++) {
+          underscores=underscores + "_ "
+        } 
+
 
 
 	  //VARIABLES and ARRAYS//
@@ -46,15 +65,18 @@
     var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
     //variable for Wins
-    var wins = 0;
+   
 
     //Array of band names.
-    var bandsArray = ["black sabbath", "iron maiden", "metallica", "slayer", "pantera"];
+    var bandsArray = ["black sabbath", "iron maiden", "metallica", "slayer", "pantera", "megadeth", "judas priest", "anthrax", ];
 
     //Randomly chooses a band from the bands array.
     var randomBand = bandsArray[Math.floor(Math.random()*bandsArray.length)];
 
       console.log(randomBand);
+
+
+
 
 	  //FUNCTIONS//
 	  //=========================================================
@@ -69,23 +91,12 @@
     //Letters already guessed
       //function to display the incorrect letters that were guessed. if a letter was already guessed, function so that number of guesses does not change and the letter does not get added again
 
-   
-    function checkAlreadyGuessed(guessLetter) {
-      if(appState.word.includes(guessLetter)) {
-    // It's a not a new guess
-    // Display error to user
-}    else {
-    // It is a new guess
-    // Store in appState
-    appState.guesses.push(guessLetter);
-    // Continue game logic
-  }
-}
-
     //Function that updates score (keeps track of wins)
-    function updateScore() {
-        document.querySelector("#score").innerHTML = "Score: " + score;
-      }
+    // function updateScore() {
+    //     document.querySelector("#score").innerHTML = "Score: " + score;
+    //   }
+
+    // updateScore()
 
     //Win screen
       //function to display a win screen when the correct answer is guessed?
@@ -96,10 +107,8 @@
     //Wins
       //function to keep track of wins
 
-    var html = 
-    "<p>wins: " + wins + "</p>" +;
 
-    document.querySelector('#game').innerHTML = html;
+    // document.querySelector('#game').innerHTML = html;
 
 
 
