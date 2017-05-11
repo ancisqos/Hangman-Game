@@ -86,7 +86,7 @@ function roundComplete(){
 		winCount++;
 		alert("You won!");
 
-		// Update the win counter in the HTML
+		// Update win counter in the HTML
 		document.getElementById("winCounter").innerHTML = winCount;
 
 		startGame();
@@ -107,16 +107,16 @@ function roundComplete(){
 // MAIN PROCESS
 // ======================================================================
 
-//Initiates the code the first time
+//Initiates code
 startGame();
 
-//Register keyclicks
+//keyclicks
 
 document.onkeyup = function(event) {
 	var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 	checkLetters(letterGuessed);
 	roundComplete();
 
-	//Testing / Debugging
+	//Testing
 	console.log(letterGuessed);
 }

@@ -1,131 +1,53 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-	<title>Hangman Game!</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman Round 2</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-  <body>
+<body>
 
-    <h1>Heavy Metal Hangman</h1>
-    
-    <div id="game">
-      <p>Press any key to start playing!</p>
+    <div class="container">
+
+        <div class="jumbotron">
+                <h1>Hangman Round 2</h1>
+                  <p>Guess the Star Wars character</p>
+        </div>
+
+    <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Word to Guess</h3>
+  </div>
+  <div class="panel-body">
+      <h2 id="wordToGuess">_ _ _ _ _ _ _</h2>
+  </div>
+</div>
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+      Wrong Guesses: <span id="wrongGuesses"></span>
+  </div>
+
+  <div class="panel-body">
+    Guesses Left: <span id="numGuesses">9</span>
+  </div>
+</div>
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    Win Counter: <span id="winCounter">0</span>
+  </div>
+  <div class="panel-body">
+    Loss Counter: <span id="lossCounter">0</span>
+  </div>
+</div>
+
+</div>
+
     </div>
+  
+  <script src="logic.js"></script>
 
-    <div>
-      <p>wins: <span id="wins"></span></p>
-    </div>
-
-    <div>
-      <p>word: <span id="word"></span></p>
-    </div>
-
-
-
-    <script>
-    // What we need:
-    
-// This is grabbing from HTML and throwing it into JavaScript
-    var wins = document.getElementById("wins");
-// This is to make sure you're grabbing the right thing
-    console.log(wins);
-// 
-    var winsCounter = 0;
-
-    wins.innerHTML = winsCounter;
-      
-
-      //CURRENT WORD  
-      //function to generate random word, the blank _ _ _ _ _ _ _ for the words, the spaces getting filled as letters are guessed
-
-    //   var word = "black sabbath";
-    //   var wordLength = word.length;
-    //   var underscores = "";
-    //   for(i=0; i<wordLength; i++) {
-    // underscores = underscores + "_ "
-
-        var word = document.getElementById("word")
-        console.log(word)
-        var wordLength = word.length;
-        var underscores = "";
-        for (i=0; i<wordLength; i++) {
-          underscores=underscores + "_ "
-        } 
-
-
-
-	  //VARIABLES and ARRAYS//
-	  //=========================================================
-
-	  //Here is where we will define our variables for the Hangman game
-
-    var appState = {}
-
-    //Creates array that lists out every possible key choice
-    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-    //variable for Wins
-   
-
-    //Array of band names.
-    var bandsArray = ["black sabbath", "iron maiden", "metallica", "slayer", "pantera", "megadeth", "judas priest", "anthrax", ];
-
-    //Randomly chooses a band from the bands array.
-    var randomBand = bandsArray[Math.floor(Math.random()*bandsArray.length)];
-
-      console.log(randomBand);
-
-
-
-
-	  //FUNCTIONS//
-	  //=========================================================
-
-	  //Here is where we will set our functions for the Hangman game
- 
-    //Function to initialize game
-
-    //Number of guesses remaining
-      //function to countdown the number of guesses and display it
-
-    //Letters already guessed
-      //function to display the incorrect letters that were guessed. if a letter was already guessed, function so that number of guesses does not change and the letter does not get added again
-
-    //Function that updates score (keeps track of wins)
-    // function updateScore() {
-    //     document.querySelector("#score").innerHTML = "Score: " + score;
-    //   }
-
-    // updateScore()
-
-    //Win screen
-      //function to display a win screen when the correct answer is guessed?
-
-    //Loop
-      //when game is won, show win screen/answer/picture and loop function to initialize game
-
-    //Wins
-      //function to keep track of wins
-
-
-    // document.querySelector('#game').innerHTML = html;
-
-
-
-	  //MAIN PROCESS
-	  //=========================================================
-
-    //When user presses key, it will run the following function:
-
-    document.onkeyup = function(event) {
-      var userguess = String.fromCharCode(event.keyCode).toLowerCase();
-
-      console.log(userguess);
-
-      
-    }
-  	
-    </script>
-
-  </body>
+</body>
 </html>
